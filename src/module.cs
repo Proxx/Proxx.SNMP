@@ -6,6 +6,15 @@ using System.Net;
 
 namespace Proxx.SNMP
 {
+    /// <list type="alertSet">
+    ///   <item>
+    ///     <term>Proxx.SQLite</term>
+    ///     <description>
+    ///     Author: Marco van G. (Proxx)
+    ///     Website: www.Proxx.nl
+    ///     </description>
+    ///   </item>
+    /// </list>
     [OutputType("PSObject")]
     [Cmdlet(VerbsLifecycle.Invoke, "SnmpGet", SupportsShouldProcess = true)]
     public class InvokeSnmpGet : PSCmdlet
@@ -22,6 +31,9 @@ namespace Proxx.SNMP
         #endregion
 
         #region Parameters
+        /// <summary>
+        /// <para type="description">Specifies the address of the device.</para>
+        /// </summary>
         [Alias("Address", "ComputerName", "IP", "Node")]
         [Parameter(
             Mandatory = true,
@@ -34,6 +46,9 @@ namespace Proxx.SNMP
             get { return _IpAddress; }
             set { _IpAddress = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies the object identifier (OID). One or more object identifiers (OIDs) may be given as arguments.</para>
+        /// </summary>
         [Parameter(
             Mandatory = true,
             Position = 2,
@@ -44,30 +59,45 @@ namespace Proxx.SNMP
             get { return _Oid; }
             set { _Oid = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies community string for SNMP communication. The default is "public".</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public string Community
         {
             get { return _Community; }
             set { _Community = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies port used for SNMP communication. The default is "161".</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public int Port
         {
             get { return _Port; }
             set { _Port = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies ammount of times SNMP will retry to get values. The default is 1.</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public int Retry
         {
             get { return _Retry; }
             set { _Retry = value; }
         }
+        /// <summary>
+        /// <para type="description">Determines how long Windows PowerShell waits for this command to complete. The default is 2seconds.</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public int TimeOut
         {
             get { return _TimeOut; }
             set { _TimeOut = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies the SNMP Version used for the connection. The default is 2.</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public SnmpVersion Version
         {
@@ -111,7 +141,15 @@ namespace Proxx.SNMP
         }
         #endregion
     }
-
+    /// <list type="alertSet">
+    ///   <item>
+    ///     <term>Proxx.SQLite</term>
+    ///     <description>
+    ///     Author: Marco van G. (Proxx)
+    ///     Website: www.Proxx.nl
+    ///     </description>
+    ///   </item>
+    /// </list>
     [OutputType("PSObject")]
     [Cmdlet(VerbsLifecycle.Invoke, "SnmpWalk", SupportsShouldProcess = true)]
     public class InvokeSnmpWalk : PSCmdlet
@@ -130,6 +168,9 @@ namespace Proxx.SNMP
         #endregion
 
         #region Parameters
+        /// <summary>
+        /// <para type="description">Specifies the address of the device.</para>
+        /// </summary>
         [Alias("Address", "ComputerName", "IP", "Node")]
         [Parameter(
             Mandatory = true,
@@ -142,6 +183,9 @@ namespace Proxx.SNMP
             get { return _IpAddress; }
             set { _IpAddress = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies the object identifier (OID). One or more object identifiers (OIDs) may be given as arguments.</para>
+        /// </summary>
         [Parameter(
             Mandatory = false,
             Position = 2,
@@ -152,37 +196,54 @@ namespace Proxx.SNMP
             get { return _Oid; }
             set { _Oid = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies community string for SNMP communication. The default is "public".</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public string Community
         {
             get { return _Community; }
             set { _Community = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies port used for SNMP communication. The default is "161".</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public int Port
         {
             get { return _Port; }
             set { _Port = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies ammount of times SNMP will retry to get values. The default is 1.</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public int Retry
         {
             get { return _Retry; }
             set { _Retry = value; }
         }
+        /// <summary>
+        /// <para type="description">Determines how long Windows PowerShell waits for this command to complete. The default is 2seconds.</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public int TimeOut
         {
             get { return _TimeOut; }
             set { _TimeOut = value; }
         }
+        /// <summary>
+        /// <para type="description">Specifies the SNMP Version used for the connection. The default is 2.</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public SnmpVersion Version
         {
             get { return _Version; }
             set { _Version = value; }
         }
-
+        /// <summary>
+        /// <para type="description">returns the next value even if Current OID is not Root of Parameter OID</para>
+        /// </summary>
         [Parameter(Mandatory = false)]
         public SwitchParameter Force
         {

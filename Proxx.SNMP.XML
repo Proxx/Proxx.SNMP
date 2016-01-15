@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Proxx.SNMP</name>
+    </assembly>
+    <members>
+        <member name="T:Proxx.SNMP.InvokeSnmpGet">
+            <list type="alertSet">
+              <item>
+                <term>Proxx.SQLite</term>
+                <description>
+                Author: Marco van G. (Proxx)
+                Website: www.Proxx.nl
+                </description>
+              </item>
+            </list>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.IpAddress">
+            <summary>
+            <para type="description">Specifies the address of the device.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.Oid">
+            <summary>
+            <para type="description">Specifies the object identifier (OID). One or more object identifiers (OIDs) may be given as arguments.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.Community">
+            <summary>
+            <para type="description">Specifies community string for SNMP communication. The default is "public".</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.Port">
+            <summary>
+            <para type="description">Specifies port used for SNMP communication. The default is "161".</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.Retry">
+            <summary>
+            <para type="description">Specifies ammount of times SNMP will retry to get values. The default is 1.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.TimeOut">
+            <summary>
+            <para type="description">Determines how long Windows PowerShell waits for this command to complete. The default is 2seconds.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpGet.Version">
+            <summary>
+            <para type="description">Specifies the SNMP Version used for the connection. The default is 2.</para>
+            </summary>
+        </member>
+        <member name="T:Proxx.SNMP.InvokeSnmpWalk">
+            <list type="alertSet">
+              <item>
+                <term>Proxx.SQLite</term>
+                <description>
+                Author: Marco van G. (Proxx)
+                Website: www.Proxx.nl
+                </description>
+              </item>
+            </list>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.IpAddress">
+            <summary>
+            <para type="description">Specifies the address of the device.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.Oid">
+            <summary>
+            <para type="description">Specifies the object identifier (OID). One or more object identifiers (OIDs) may be given as arguments.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.Community">
+            <summary>
+            <para type="description">Specifies community string for SNMP communication. The default is "public".</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.Port">
+            <summary>
+            <para type="description">Specifies port used for SNMP communication. The default is "161".</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.Retry">
+            <summary>
+            <para type="description">Specifies ammount of times SNMP will retry to get values. The default is 1.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.TimeOut">
+            <summary>
+            <para type="description">Determines how long Windows PowerShell waits for this command to complete. The default is 2seconds.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.Version">
+            <summary>
+            <para type="description">Specifies the SNMP Version used for the connection. The default is 2.</para>
+            </summary>
+        </member>
+        <member name="P:Proxx.SNMP.InvokeSnmpWalk.Force">
+            <summary>
+            <para type="description">returns the next value even if Current OID is not Root of Parameter OID</para>
+            </summary>
+        </member>
+    </members>
+</doc>
