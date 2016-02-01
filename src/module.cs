@@ -276,15 +276,9 @@ namespace Proxx.SNMP
             {
                 IPAddress ip = null;
                 if (!System.Net.IPAddress.TryParse(node, out ip))
-                {
                     ThrowTerminatingError(new ErrorRecord(new Exception("Not a valid ipaddress"), "", ErrorCategory.InvalidData, ""));
-                    //ip = System.Net.Dns.GetHostEntry(node).AddressList[0];
-                    //_SimpleSnmp.PeerIP = ip;
-                }
                 else
-                {
                     _SimpleSnmp.PeerIP = ip;
-                }
                 _SimpleSnmp.PeerIP = System.Net.IPAddress.Parse(ip.ToString());
                 string LastOid = _Oid;
                 while(LastOid != null)
@@ -297,18 +291,16 @@ namespace Proxx.SNMP
                             if (!item.Key.ToString().Equals("0.0"))
                             {
                                 PSObject obj = new PSObject();
-                                //PSNoteProperties are not strongly typed but do contain an explicit type.
                                 obj.Properties.Add(new PSNoteProperty("Node", node));
                                 obj.Properties.Add(new PSNoteProperty("OID", item.Key.ToString()));
                                 obj.Properties.Add(new PSNoteProperty("Type", SnmpConstants.GetTypeName(item.Value.Type)));
                                 obj.Properties.Add(new PSNoteProperty("Value", item.Value.ToString()));
                                 if (_Force)
-                                {
                                     LastOid = item.Key.ToString();
-                                }
                                 else
                                 {
-                                    if (_RootOID.IsRootOf(item.Key)) { LastOid = item.Key.ToString(); }
+                                    if (_RootOID.IsRootOf(item.Key))
+                                        LastOid = item.Key.ToString();
                                     else
                                     {
                                         LastOid = null;
@@ -319,10 +311,12 @@ namespace Proxx.SNMP
                             }
                         }
                     }
-                    else { Console.WriteLine("OID " + LastOid + " returned Null "); LastOid = null; }
-                
+                    else
+                    {
+                        Console.WriteLine("OID " + LastOid + " returned Null ");
+                        LastOid = null;
+                    }
                 }
-
             }
         }
         #endregion
