@@ -7,7 +7,7 @@
         <member name="T:Proxx.SNMP.InvokeSnmpGet">
             <list type="alertSet">
               <item>
-                <term>Proxx.SQLite</term>
+                <term>Proxx.SNMP</term>
                 <description>
                 Author: Marco van G. (Proxx)
                 Website: www.Proxx.nl
@@ -53,7 +53,7 @@
         <member name="T:Proxx.SNMP.InvokeSnmpWalk">
             <list type="alertSet">
               <item>
-                <term>Proxx.SQLite</term>
+                <term>Proxx.SNMP</term>
                 <description>
                 Author: Marco van G. (Proxx)
                 Website: www.Proxx.nl

@@ -8,7 +8,7 @@ namespace Proxx.SNMP
 {
     /// <list type="alertSet">
     ///   <item>
-    ///     <term>Proxx.SQLite</term>
+    ///     <term>Proxx.SNMP</term>
     ///     <description>
     ///     Author: Marco van G. (Proxx)
     ///     Website: www.Proxx.nl
@@ -16,7 +16,7 @@ namespace Proxx.SNMP
     ///   </item>
     /// </list>
     [OutputType("PSObject")]
-    [Cmdlet(VerbsLifecycle.Invoke, "SnmpGet", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsLifecycle.Invoke, "SnmpGet", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Low)]
     public class InvokeSnmpGet : PSCmdlet
     {
         #region Variables
@@ -124,26 +124,31 @@ namespace Proxx.SNMP
             {
                 _SimpleSnmp.PeerIP = System.Net.IPAddress.Parse(node);
                 Dictionary<Oid, AsnType> response = _SimpleSnmp.Get(_Version, _Oid);
-                foreach (KeyValuePair<Oid, AsnType> item in response)
+                if (response != null)
                 {
-                    if (!item.Key.ToString().Equals("0.0"))
+                    foreach (KeyValuePair<Oid, AsnType> item in response)
                     {
-                        PSObject obj = new PSObject();
-                        //PSNoteProperties are not strongly typed but do contain an explicit type.
-                        obj.Properties.Add(new PSNoteProperty("Node", node));
-                        obj.Properties.Add(new PSNoteProperty("OID", item.Key.ToString()));
-                        obj.Properties.Add(new PSNoteProperty("Type", SnmpConstants.GetTypeName(item.Value.Type)));
-                        obj.Properties.Add(new PSNoteProperty("Value", item.Value.ToString()));
-                        WriteObject(obj);
+                        if (!item.Key.ToString().Equals("0.0"))
+                        {
+                            PSObject obj = new PSObject();
+                            //PSNoteProperties are not strongly typed but do contain an explicit type.
+                            obj.Properties.Add(new PSNoteProperty("Node", node));
+                            obj.Properties.Add(new PSNoteProperty("OID", item.Key.ToString()));
+                            obj.Properties.Add(new PSNoteProperty("Type", SnmpConstants.GetTypeName(item.Value.Type)));
+                            obj.Properties.Add(new PSNoteProperty("Value", item.Value.ToString()));
+                            WriteObject(obj);
+                        }
                     }
                 }
+                else { WriteError(new ErrorRecord(new Exception("OID " + string.Join(", ", _Oid) + " returned Null "),"", ErrorCategory.ProtocolError,null)); }
+
             }
         }
         #endregion
     }
     /// <list type="alertSet">
     ///   <item>
-    ///     <term>Proxx.SQLite</term>
+    ///     <term>Proxx.SNMP</term>
     ///     <description>
     ///     Author: Marco van G. (Proxx)
     ///     Website: www.Proxx.nl

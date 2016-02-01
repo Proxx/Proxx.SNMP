@@ -283,7 +283,7 @@
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
-      <maml:title>Proxx.SQLite</maml:title>
+      <maml:title>Proxx.SNMP</maml:title>
       <maml:alert>
         <maml:para>Author: Marco van G. (Proxx) Website: www.Proxx.nl</maml:para>
       </maml:alert>
@@ -600,7 +600,7 @@
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
-      <maml:title>Proxx.SQLite</maml:title>
+      <maml:title>Proxx.SNMP</maml:title>
       <maml:alert>
         <maml:para>Author: Marco van G. (Proxx) Website: www.Proxx.nl</maml:para>
       </maml:alert>
