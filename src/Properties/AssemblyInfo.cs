@@ -10,8 +10,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Proxx.nl")]
 [assembly: AssemblyProduct("Proxx.SNMP")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("(c) 2016 Proxx.nl. All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyTrademark("(c) 2020 Proxx.nl. All rights reserved.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.1.4")]
-[assembly: AssemblyFileVersion("1.1.1.4")]
+[assembly: AssemblyVersion("1.1.1.5")]
+[assembly: AssemblyFileVersion("1.1.1.5")]
 
