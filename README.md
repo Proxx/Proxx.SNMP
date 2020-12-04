@@ -7,8 +7,8 @@ SNMP PowerShell CmdLets
 ``` powershell
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-Cmdlet          Invoke-SnmpGet                                     1.1.0.7    Proxx.SNMP
-Cmdlet          Invoke-SnmpWalk                                    1.1.0.7    Proxx.SNMP
+Cmdlet          Invoke-SnmpGet                                     1.1.1.6    Proxx.SNMP
+Cmdlet          Invoke-SnmpWalk                                    1.1.1.6    Proxx.SNMP
 ```
 
 [PowerShell Gallery](https://www.powershellgallery.com/packages/Proxx.SNMP/)
