@@ -114,6 +114,7 @@ namespace Proxx.SNMP
             _SimpleSnmp.Community = _Community;
             _SimpleSnmp.Retry = _Retry;
             _SimpleSnmp.Timeout = _TimeOut;
+            _SimpleSnmp.PeerPort = _Port;
         }
 
 
@@ -264,6 +265,7 @@ namespace Proxx.SNMP
             _SimpleSnmp = new SimpleSnmp();
             _SimpleSnmp.Community = _Community;
             _SimpleSnmp.Retry = _Retry;
+            _SimpleSnmp.Timeout = _TimeOut;
             _SimpleSnmp.Timeout = _TimeOut;
             if (_Force) { _RootOID = null; }
             else { _RootOID = new Oid(_Oid.ToString()); }
